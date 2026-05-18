@@ -22,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
             "Desayuno clásico, ligero y muy nutritivo."
     };
 
+    int[] imagenes = {
+            0,
+            R.drawable.img_chicharron,
+            R.drawable.img_lomo_saltado,
+            R.drawable.img_avena
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("nombre", platillos[position]);
                     intent.putExtra("descripcion", descripciones[position]);
 
-                    startActivity(intent);
+                    intent.putExtra("imagen_id", imagenes[position]);
 
+                    startActivity(intent);
                     parent.setSelection(0);
                 }
             }
